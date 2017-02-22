@@ -1,0 +1,75 @@
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+//Declare your variables.
+int i;          //Loop iterator.
+int s; //space
+char star = '*'; //Star character
+int rows;       //Number of rows.
+
+int main(){
+
+	cout << "Enter number of rows: ";
+	cin >> rows;
+
+	//wide to narrow T
+
+	for (i = rows; i >= 1; --i) 
+		{
+			for (int j = 1; j <= i; ++j)
+			{
+				cout << "*";
+			}
+			cout << endl;
+	}
+	cout << "\n";
+	
+	//narrow to wide
+	for (int i = 1; i <= rows; ++i)
+	{
+		for (int j = 1; j <= i; ++j)
+		{
+			cout << "*";
+		}
+		cout << "\n";
+	}
+	//
+	cout << "\n";
+
+	//wide space to no space T
+	for (i = 1; i <= rows; i++) //Start rows.
+	{
+		cout << setfill(' ') << setw(rows-i+1) << " ";
+		cout << setfill('*') << setw((i)) << "*";
+		cout << "\n";  //Print carriage return.
+	}
+	cout << "\n";
+
+	//no space to wide space T
+	for (i = 1; i <= rows; i++) //Start rows.
+	{
+		cout << setfill(' ') << setw(i) << " ";
+		cout << setfill('*') << setw((rows - i + 1)) << "*";
+		cout << "\n";  //Print carriage return.
+	}
+	cout << "\n";
+
+	//equilateral below
+	for (i = 1; i <= rows; i++) //Start rows.
+	{
+					//Print a field of spaces equal to the number of rows minus half the width of the triangle, plus 2 spaces
+					//between the row number and the triangle,
+		cout << setfill(' ') << setw(rows - i + 2) << " ";
+		//Print a field of pipes equal to the number of row number*2 then subtract 1 to keep the width odd and centered.
+		cout << setfill('*') << setw((i * 2 - 1)) << "*";
+		cout << "\n";  //Print carriage return.
+	}
+
+	cout << "Press any key to quit\n"; 
+	char q; 
+	cin >> q; 
+	return 0;
+
+}

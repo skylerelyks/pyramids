@@ -1,0 +1,43 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+main(){
+	int q = 0;
+cout >> "Insert number for pi evaluation:\n";
+cin << q;
+
+float sum = 0.0;
+for (int n=0; n <= q; n++)	// cout sum
+{
+	if (n % 2 == 0)
+	{
+		sum += 1 / (2* float(n)+1); //cout  sum when +
+	}
+	else
+	{
+		sum -= 1/ (2* float(n)+1);	//cout - sum
+	}
+}
+cout << "Approximation of pi: " << 4* sum << endl;
+
+
+/*for (int j=0;j<=N;j++);
+{ 
+
+if(j%2==0); //even
+
+sum+=1/(2*double(j)+1);
+
+}
+
+else {
+
+{sum-=1/(2*double(j)+1);}
+	
+}
+
+cout <<4*sum;*/
+
+system("pause");
+return 0;
+}
